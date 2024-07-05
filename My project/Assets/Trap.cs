@@ -7,7 +7,7 @@ public class Trap : MonoBehaviour
 {
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<Player>()!=null)
+        if(collision.GetComponent<PlayerMovement>()!=null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 Debug.Log("1");

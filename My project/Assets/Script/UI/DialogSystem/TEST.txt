@@ -1,0 +1,16 @@
+A
+This text turns<color="red"> red
+B
+阿，我叫源。
+B
+Up <voffset=1em>up <voffset=2em>UP</voffset> and <voffset=-0.5em>down</voffset> we go again.
+B
+感觉身体有点不舒服
+B
+能帮我康康吗？大夫？
+A
+嗯，好
+A
+那先做个检查吧！
+B
+<color="red">This text is red！

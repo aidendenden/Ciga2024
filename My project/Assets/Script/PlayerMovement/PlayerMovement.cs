@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D rb;
@@ -13,8 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField]private float jumpForce=12;
 
     private bool canMove = true;
-
-
+    
     private bool canDubbleJump;
     private bool canWallSlide=true;
     private bool isWallSliding;
@@ -31,9 +30,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float wallCheckDistance;
     [SerializeField] private LayerMask whatIsGround;
 
-
-    
-                     private bool isGround;
+    private bool isGround;
     private bool isWallDetected;
 
     // Start is called before the first frame update
@@ -78,9 +75,8 @@ public class Player : MonoBehaviour
 
     private void CheckInput()
     {
-              movingInput = Input.GetAxisRaw("Horizontal");
-        if (Input.GetAxis("Vertical")<0)
-        
+        movingInput = Input.GetAxisRaw("Horizontal");
+        if (Input.GetAxis("Vertical")<0) 
             canWallSlide = false;
         
         //ÌøÔ¾º¯Êý&¶þ¶ÎÌø
@@ -104,7 +100,8 @@ public class Player : MonoBehaviour
             canDubbleJump = false;
             Jump();
         }
-        //canWallSlide = false;
+        
+        canWallSlide = false;
     }
 
 

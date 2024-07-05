@@ -1,0 +1,8 @@
+﻿My project/.vs
+My project/Library
+My project/Logs
+My project/obj
+My project/UserSettings
+*.vsconfig
+*.csproj
+*.sln

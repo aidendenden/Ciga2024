@@ -9,19 +9,13 @@ public class Trap_Fire : Trap
     private bool isWorking;
     [SerializeField] private float cooldown;
     [SerializeField] private float cooldownTimer;
-
     
-
     // Start is called before the first frame update
     void Start()
     {
         anim=GetComponent<Animator>();
     }
-    protected override void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (isWorking)
-            base.OnTriggerEnter2D(collision);
-    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -32,13 +26,11 @@ public class Trap_Fire : Trap
             cooldownTimer = cooldown;
         }
         anim.SetBool("isWorking", isWorking);
-
-
-
-
-
-
     }
-
     
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (isWorking)
+            base.OnTriggerEnter2D(collision);
+    }
 }

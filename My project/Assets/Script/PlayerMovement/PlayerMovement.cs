@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     private Animator anim;
@@ -26,12 +27,18 @@ public class PlayerMovement : MonoBehaviour
     //检测地面
     [Header("Collision info")]
    
-    [SerializeField] private float groundCheckDistance;
-    [SerializeField] private float wallCheckDistance;
-    [SerializeField] private LayerMask whatIsGround;
+    public float groundCheckDistance;
+    public float wallCheckDistance;
+    public LayerMask whatIsGround;
 
     private bool isGround;
     private bool isWallDetected;
+    
+    private static readonly int YVelocity = Animator.StringToHash("yVelocity");
+    private static readonly int IsGrounded = Animator.StringToHash("isGrounded");
+    private static readonly int IsMoving = Animator.StringToHash("isMoving");
+    private static readonly int IsWallSliding = Animator.StringToHash("isWallSliding");
+    private static readonly int IsWallDetected = Animator.StringToHash("isWallDetected");
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +65,9 @@ public class PlayerMovement : MonoBehaviour
         if (canWallSlide)
         {
             isWallSliding = true;
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.1f);
+            var velocity = rb.velocity;
+            velocity = new Vector2(velocity.x, velocity.y * 0.1f);
+            rb.velocity = velocity;
         }
         
         Move();
@@ -69,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         if(canMove)
-        rb.velocity = new Vector2(movingInput * speed, rb.velocity.y);
+            rb.velocity = new Vector2(movingInput * speed, rb.velocity.y);
     }
 
 
@@ -148,20 +157,21 @@ public class PlayerMovement : MonoBehaviour
     private void AnimatorController() 
     {
         //将动画参数与代码构筑联系
-        bool isMoving = rb.velocity.x != 0;
-        anim.SetFloat("yVelocity", rb.velocity.y);
-        anim.SetBool("isGrounded", isGround);
-        anim.SetBool("isMoving", isMoving);
-        anim.SetBool("isWallSliding",isWallSliding);
-        anim.SetBool("isWallDetected", isWallDetected);
+        var velocity = rb.velocity;
+        bool isMoving = velocity.x != 0;
+        anim.SetFloat(YVelocity, velocity.y);
+        anim.SetBool(IsGrounded, isGround);
+        anim.SetBool(IsMoving, isMoving);
+        anim.SetBool(IsWallSliding,isWallSliding);
+        anim.SetBool(IsWallDetected, isWallDetected);
     }
     
     //碰撞系统
     private void CollisionCheck()
     {
-
-        isGround = Physics2D.Raycast(transform.position,Vector2.down, groundCheckDistance, whatIsGround);
-        isWallDetected = Physics2D.Raycast(transform.position,Vector2.right*facingDirection,wallCheckDistance,whatIsGround);
+        var position = transform.position;
+        isGround = Physics2D.Raycast(position,Vector2.down, groundCheckDistance, whatIsGround);
+        isWallDetected = Physics2D.Raycast(position,Vector2.right*facingDirection,wallCheckDistance,whatIsGround);
         if (isWallDetected&& rb.velocity.y < 0)
             canWallSlide = true;
 
@@ -174,9 +184,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-       
-        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + wallCheckDistance*facingDirection,transform.position.y));
-        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x , transform.position.y-groundCheckDistance));
+        var position = transform.position;
+        Gizmos.DrawLine(position, new Vector3(position.x + wallCheckDistance*facingDirection,position.y));
+        Gizmos.DrawLine(position, new Vector3(position.x , position.y-groundCheckDistance));
     }
 }
 

@@ -6,3 +6,5 @@ My project/UserSettings
 *.vsconfig
 *.csproj
 *.sln
+My project/.idea
+My project/Temp

@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1739,7 +1740,7 @@ Transform:
   m_GameObject: {fileID: 694046757}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.21, y: 3.22, z: 0}
+  m_LocalPosition: {x: 3.44, y: 3.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2331,33 +2332,17 @@ PrefabInstance:
       value: -0.04847884
       objectReference: {fileID: 0}
     - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
-      propertyPath: wallCheckDistance
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
       propertyPath: groundCheckDistance
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
       propertyPath: footstepClips.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
       propertyPath: footstepClips.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 82c50c91376c49f4e9caf6cfdc8ba3aa, type: 3}
-    - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
-      propertyPath: footstepClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 9cb0cef060e430d40a8d25754339005f, type: 3}
-    - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
-      propertyPath: footstepClips.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 857dd163b9eedf346b1ad33f2bf19531, type: 3}
-    - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
-      propertyPath: footstepClips.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: b980e67f3393ece4580b5793f8c665aa, type: 3}
     - target: {fileID: 4789678307731287156, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
       propertyPath: m_SortingLayer
       value: 4

@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour
         GameEventManager.Instance.ClearEventListeners();
         getKey=false;
     }
-    
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
     
 }

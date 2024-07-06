@@ -2,33 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class PlayerMovement : MonoBehaviour
 {
-    public bool canControl=true;
+    public bool canControl = true;
     
     private Animator anim;
     private Rigidbody2D rb;
+    private AudioSource audioSource; // AudioSource组件引用
 
     //移动速度
     [Header("Move info")]
-    [SerializeField]private float speed = 5;
-    [SerializeField]private float jumpForce=12;
+    [SerializeField] private float speed = 5;
+    [SerializeField] private float jumpForce = 12;
+    [SerializeField] private AudioClip[] footstepClips; // 脚步声音频片段数组
+    [SerializeField] private AudioClip jumpClip; // 跳跃声音频片段
 
     private bool canMove = true;
-    
-    private bool canDubbleJump;
-    private bool canWallSlide=true;
+    private bool canDoubleJump;
+    private bool canWallSlide = true;
     private bool isWallSliding;
 
-    private bool facingRight=true;
+    private bool facingRight = true;
     private float movingInput;
-    private int facingDirection=1;
+    private int facingDirection = 1;
     [SerializeField] private Vector2 wallJumpDirection;
 
     //检测地面
     [Header("Collision info")]
-   
     public float groundCheckDistance;
     public float wallCheckDistance;
     public LayerMask whatIsGround;
@@ -47,12 +47,13 @@ public class PlayerMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>(); // 获取AudioSource组件
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!canControl)
+        if (!canControl)
             return;
         
         CollisionCheck();
@@ -63,9 +64,9 @@ public class PlayerMovement : MonoBehaviour
         if (isGround)
         {
             canMove = true;
-            canDubbleJump = true;
+            canDoubleJump = true;
         }
-       
+
         if (canWallSlide)
         {
             isWallSliding = true;
@@ -77,19 +78,29 @@ public class PlayerMovement : MonoBehaviour
         Move();
     }
 
-   
-    
     private void Move()
     {
-        if(canMove)
+        if (canMove)
             rb.velocity = new Vector2(movingInput * speed, rb.velocity.y);
+        
+        if (isGround && Mathf.Abs(movingInput) > 0 && !audioSource.isPlaying)
+        {
+            // 播放随机脚步声
+            int randomIndex = Random.Range(0, footstepClips.Length);
+            //audioSource.clip = footstepClips[randomIndex];
+            audioSource.Play();
+        }
+        else if (Mathf.Abs(movingInput) == 0 || !isGround)
+        {
+            // 停止脚步声
+            audioSource.Stop();
+        }
     }
-
 
     private void CheckInput()
     {
         movingInput = Input.GetAxisRaw("Horizontal");
-        if (Input.GetAxis("Vertical")<0) 
+        if (Input.GetAxis("Vertical") < 0) 
             canWallSlide = false;
         
         //跳跃函数&二段跳
@@ -97,9 +108,10 @@ public class PlayerMovement : MonoBehaviour
             JumpButton();
         //横向速度
     }
+
     private void JumpButton()
     {
-        if(isWallSliding )
+        if (isWallSliding)
         {
             WallJump();
         }
@@ -107,50 +119,50 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
-        else if (canDubbleJump)
+        else if (canDoubleJump)
         {
             canMove = true;
-            canDubbleJump = false;
+            canDoubleJump = false;
             Jump();
         }
         
         canWallSlide = false;
     }
 
-
     private void Jump()
     {
-            canMove = true;
-
+        canMove = true;
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        PlayJumpSound();
     }
 
     private void WallJump()
     {
         Debug.Log("触墙跳跃");
-        canDubbleJump = true;
+        canDoubleJump = true;
         canMove = false;
-
-        rb.velocity= new Vector2(wallJumpDirection.x * -facingDirection, wallJumpDirection.y);
-        Debug.Log("velocity="+ rb.velocity);
+        rb.velocity = new Vector2(wallJumpDirection.x * -facingDirection, wallJumpDirection.y);
+        Debug.Log("velocity=" + rb.velocity);
+        PlayJumpSound();
     }
+
     private void FlipController()
     {
-        if (isGround&& isWallDetected)
+        if (isGround && isWallDetected)
         {
             if (facingRight && movingInput < 0)
                 Flip();
             else if (!facingRight && movingInput > 0)
                 Flip();
-            
         }
+
         //反转函数
         if (rb.velocity.x > 0 && !facingRight)
             Flip();
         else if (rb.velocity.x < 0 && facingRight)
             Flip();
-
     }
+
     private void Flip()
     {
         facingDirection = facingDirection * -1;
@@ -166,17 +178,18 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat(YVelocity, velocity.y);
         anim.SetBool(IsGrounded, isGround);
         anim.SetBool(IsMoving, isMoving);
-        anim.SetBool(IsWallSliding,isWallSliding);
+        anim.SetBool(IsWallSliding, isWallSliding);
         anim.SetBool(IsWallDetected, isWallDetected);
     }
-    
+
     //碰撞系统
     private void CollisionCheck()
     {
         var position = transform.position;
-        isGround = Physics2D.Raycast(position,Vector2.down, groundCheckDistance, whatIsGround);
-        isWallDetected = Physics2D.Raycast(position,Vector2.right*facingDirection,wallCheckDistance,whatIsGround);
-        if (isWallDetected&& rb.velocity.y < 0)
+        isGround = Physics2D.Raycast(position, Vector2.down, groundCheckDistance, whatIsGround);
+        isWallDetected = Physics2D.Raycast(position, Vector2.right * facingDirection, wallCheckDistance, whatIsGround);
+
+        if (isWallDetected && rb.velocity.y < 0)
             canWallSlide = true;
 
         if (!isWallDetected)
@@ -186,15 +199,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void PlayJumpSound()
+    {
+        audioSource.PlayOneShot(jumpClip);
+    }
+
     private void OnDrawGizmos()
     {
         var position = transform.position;
-        Gizmos.DrawLine(position, new Vector3(position.x + wallCheckDistance*facingDirection,position.y));
-        Gizmos.DrawLine(position, new Vector3(position.x , position.y-groundCheckDistance));
+        Gizmos.DrawLine(position, new Vector3(position.x + wallCheckDistance * facingDirection, position.y));
+        Gizmos.DrawLine(position, new Vector3(position.x, position.y - groundCheckDistance));
     }
 }
-
-
-
-
-

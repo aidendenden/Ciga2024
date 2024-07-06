@@ -18,8 +18,8 @@ public class Door : BaseAction
     }
 
     public override void Execute()
-    {
+    { 
         GameManager.Instance.getKey = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameManager.Instance.NextLevel();
     }
 }

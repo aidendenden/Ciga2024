@@ -6,12 +6,13 @@ public class Key : BaseAction
 {
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (!GameManager.Instance.getKey && collision.gameObject.CompareTag("Player"))
         {
             transform.position = collision.transform.GetChild(0).position;
             transform.SetParent(collision.transform);
             Execute();
         }
+       
     }
     public override void Execute()
     {

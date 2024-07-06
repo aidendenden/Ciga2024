@@ -7,14 +7,14 @@ public class Trap : BaseAction
 {
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Execute();
         }
     }
+
     public override void Execute()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Debug.Log("1");
+        GameManager.Instance.REstart();
     }
 }

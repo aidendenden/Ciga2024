@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PatrollingNPC : Interaction
+public class PatrollingNPC : BaseAction
 {
     // Components
     private Rigidbody2D rb;
@@ -113,6 +113,6 @@ public class PatrollingNPC : Interaction
 
     public override void Execute()
     {
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }

@@ -64,8 +64,15 @@ public class GameEventManager : MonoBehaviour
     public void ClearEventListeners()
     {
         // 清空事件监听器
-        OnTrigger = null;
-        OnKeyDown = null;
+        if (OnTrigger!=null)
+        {
+            OnTrigger = null;
+        }
+        
+        if (OnKeyDown!=null)
+        {
+            OnKeyDown = null;
+        }
     }
 }
 

@@ -11,7 +11,7 @@ public class Door : BaseAction
         {
             if (GameManager.Instance.getKey)
             {
-                Destroy(collision.transform.GetChild(1));
+                Destroy(collision.transform.GetChild(1).gameObject);
                 Execute();
             }
         }

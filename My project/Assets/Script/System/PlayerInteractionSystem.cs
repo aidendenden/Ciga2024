@@ -14,15 +14,15 @@ public class PlayerInteractionSystem : MonoBehaviour
         player = GetComponent<PlayerMovement>();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        IAction action = collision.GetComponent<IAction>();
-        
-        if(action != null)
-        {
-            action.Execute();
-        }
-    }
+    // void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     IAction action = collision.GetComponent<IAction>();
+    //     
+    //     if(action != null)
+    //     {
+    //         action.Execute();
+    //     }
+    // }
     
     void Update()
     {
@@ -31,7 +31,7 @@ public class PlayerInteractionSystem : MonoBehaviour
         if (hit.collider != null)
         {
             GameObject hitObject = hit.collider.gameObject;
-            IAction action = hit.collider.GetComponent<IAction>();
+            IAction action = hit.collider.GetComponent<Interaction>();
 
             if (action != null)
             {

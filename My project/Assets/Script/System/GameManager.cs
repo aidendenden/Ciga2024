@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public bool isPause=false;
     public bool getKey=false;
-        
+
+    public LevelLoader LevelLoader;
+    
     void SingletonInit()
     {
         if (Instance != null)
@@ -16,7 +19,14 @@ public class GameManager : MonoBehaviour
         else
             Instance = this;
     }
-    
+
+    private void Start()
+    {
+        LevelLoader = transform.GetComponent<LevelLoader>();
+        isPause=false;
+        getKey=false;
+    }
+
     private void Awake()
     {
         SingletonInit();
@@ -24,14 +34,14 @@ public class GameManager : MonoBehaviour
 
     public void REstart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         GameEventManager.Instance.ClearEventListeners();
         getKey=false;
+        LevelLoader.ReloadLevel();
     }
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        LevelLoader.LoadNextLevel();
     }
     
 }

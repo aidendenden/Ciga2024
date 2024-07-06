@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PatrollingNPC : BaseAction
+public class PatrollingNPC : Interaction
 {
     // Components
     private Rigidbody2D rb;

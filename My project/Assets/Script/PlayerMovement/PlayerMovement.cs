@@ -53,8 +53,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!canControl)
-            return;
+        
         
         CollisionCheck();
         FlipController();
@@ -99,6 +98,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckInput()
     {
+        if (!canControl)
+        {
+            movingInput = 0;
+            return;
+        }
+           
         movingInput = Input.GetAxisRaw("Horizontal");
         if (Input.GetAxis("Vertical") < 0) 
             canWallSlide = false;

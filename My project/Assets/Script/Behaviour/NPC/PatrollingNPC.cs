@@ -113,6 +113,6 @@ public class PatrollingNPC : BaseAction
 
     public override void Execute()
     {
-        
+        Destroy(this);
     }
 }

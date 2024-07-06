@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6190962248557540436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 992817568308247856}
+  m_Layer: 0
+  m_Name: KeyPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &992817568308247856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190962248557540436}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 703703746847304785}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8600327103188722003
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,7 +65,8 @@ Transform:
   m_LocalPosition: {x: -1.101, y: -0.729, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 992817568308247856}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!50 &8498367844390671251
@@ -96,8 +128,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.017063856, y: -0.08024347}
-  m_Size: {x: 1.0807924, y: 1.2643509}
+  m_Offset: {x: 0.017063856, y: -0.04847884}
+  m_Size: {x: 1.0807924, y: 1.2008216}
   m_Direction: 0
 --- !u!114 &3996747985832566504
 MonoBehaviour:
@@ -111,11 +143,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 204f59bf53c8db64f9befbbf690335e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5.13
+  canControl: 1
+  speed: 5
   jumpForce: 12
-  wallJumpDirection: {x: 9.09, y: 15}
+  wallJumpDirection: {x: 9, y: 15}
   groundCheckDistance: 0.85
-  wallCheckDistance: 0.78
+  wallCheckDistance: 1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
@@ -152,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c821c581755724e8553e2066629596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 3996747985832566504}
 --- !u!212 &4789678307731287156
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -191,8 +224,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 43232455
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 715785667, guid: 28abf58372d85b14c852c159ab20ecf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

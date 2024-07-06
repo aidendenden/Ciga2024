@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public bool isPause;
-    
+    public bool isPause=false;
+    public bool getKey=false;
+        
     void SingletonInit()
     {
         if (Instance != null)
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         GameEventManager.Instance.ClearEventListeners();
+        getKey=false;
     }
     
     

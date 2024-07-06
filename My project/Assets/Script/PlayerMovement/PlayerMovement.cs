@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool canControl=true;
+    
     private Animator anim;
     private Rigidbody2D rb;
 
@@ -50,6 +52,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!canControl)
+            return;
+        
         CollisionCheck();
         FlipController();
         AnimatorController();
@@ -59,7 +64,6 @@ public class PlayerMovement : MonoBehaviour
         {
             canMove = true;
             canDubbleJump = true;
-
         }
        
         if (canWallSlide)

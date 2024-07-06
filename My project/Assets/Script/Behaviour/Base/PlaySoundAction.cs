@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlaySoundAction : Interaction
+public class PlaySoundAction : BaseAction
 {
     public AudioClip soundClip;
 

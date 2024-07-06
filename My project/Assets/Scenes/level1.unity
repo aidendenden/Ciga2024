@@ -2334,6 +2334,14 @@ PrefabInstance:
       propertyPath: groundCheckDistance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
+      propertyPath: footstepClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
+      propertyPath: footstepClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 82c50c91376c49f4e9caf6cfdc8ba3aa, type: 3}
     - target: {fileID: 4789678307731287156, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
       propertyPath: m_SortingLayer
       value: 4
@@ -2349,10 +2357,6 @@ PrefabInstance:
     - target: {fileID: 8600327103188722003, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8758350322503197060, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
-      propertyPath: MinDistance
-      value: 0.6559616
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

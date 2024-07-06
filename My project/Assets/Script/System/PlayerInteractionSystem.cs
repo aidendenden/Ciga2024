@@ -23,23 +23,25 @@ public class PlayerInteractionSystem : MonoBehaviour
     //         action.Execute();
     //     }
     // }
-    
+
     void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, player.groundCheckDistance, player.whatIsGround);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, player.groundCheckDistance,
+            player.whatIsGround);
 
-        if (hit.collider != null)
-        {
-            GameObject hitObject = hit.collider.gameObject;
-            IAction action = hit.collider.GetComponent<Interaction>();
+        if (hit.collider == null) 
+            return;
+        var hitObject = hit.collider.gameObject;
+        
+         if (!hitObject.gameObject.CompareTag("Interaction")) 
+            return;
+        IAction action = hit.collider.GetComponent<PatrollingNPC>();
 
-            if (action != null)
-            {
-                float distance = Vector3.Distance(transform.position, hit.point);
+        if (action == null) 
+            return;
+        var distance = Vector3.Distance(transform.position, hit.point);
 
-                Debug.Log("Hit object: " + hitObject.name);
-                action.Execute();
-            }
-        }
+        Debug.Log("Hit object: " + hitObject.name);
+        action.Execute();
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayAnimationAction : Interaction
+public class PlayAnimationAction : BaseAction
 {
     public string animationName; // 要播放的动画名称
 

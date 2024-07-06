@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
         {
             // 播放随机脚步声
             int randomIndex = Random.Range(0, footstepClips.Length);
-            //audioSource.clip = footstepClips[randomIndex];
+            audioSource.clip = footstepClips[randomIndex];
             audioSource.Play();
         }
         else if (Mathf.Abs(movingInput) == 0 || !isGround)
@@ -157,9 +157,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //反转函数
-        if (rb.velocity.x > 0 && !facingRight)
+        if (rb.velocity.x < 0 && !facingRight)
             Flip();
-        else if (rb.velocity.x < 0 && facingRight)
+        else if (rb.velocity.x > 0 && facingRight)
             Flip();
     }
 

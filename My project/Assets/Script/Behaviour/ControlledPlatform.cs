@@ -82,7 +82,7 @@ public class ControlledPlatform : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.green;
         Gizmos.DrawSphere(startPoint, 0.1f);
         Gizmos.DrawSphere(endPoint, 0.1f);
         Gizmos.DrawLine(startPoint, endPoint);

@@ -1970,7 +1970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 349667586}
-  transitionTime: 0.5
+  transitionTime: 0
 --- !u!114 &986635583
 MonoBehaviour:
   m_ObjectHideFlags: 0

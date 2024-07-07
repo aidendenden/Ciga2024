@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5064,6 +5063,10 @@ PrefabInstance:
       propertyPath: groundCheckDistance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
+      propertyPath: footstepClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 52a230ba200f7b342898a55254bf958a, type: 3}
     - target: {fileID: 4789678307731287156, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
       propertyPath: m_SortingLayer
       value: 4

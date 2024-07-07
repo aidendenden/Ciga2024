@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2414,7 +2413,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 47.576508, y: 1.2379498}
+  m_Offset: {x: 47.576508, y: 2.13691}
   m_SpriteTilingProperty:
     border: {x: 0.25, y: 0.25, z: 0.25, w: 0.25}
     pivot: {x: 0.5, y: 0.5}
@@ -2425,7 +2424,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 238.0784, y: 10.4759}
+  m_Size: {x: 238.0784, y: 12.27382}
   m_EdgeRadius: 0
 --- !u!4 &481377391
 Transform:
@@ -2474,7 +2473,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -23.371222, y: 22.276428}
+  m_Offset: {x: -22.007092, y: 22.276428}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2485,7 +2484,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.630039, y: 37.648895}
+  m_Size: {x: 15.358299, y: 37.648895}
   m_EdgeRadius: 0
 --- !u!1001 &493438050
 PrefabInstance:
@@ -5248,7 +5247,7 @@ Transform:
   m_GameObject: {fileID: 1301532799}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0344, y: -0.0311, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1.0062063, y: 1.0058, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6313,7 +6312,7 @@ Transform:
   m_GameObject: {fileID: 1777128982}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.016639173, y: -0.023089267, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

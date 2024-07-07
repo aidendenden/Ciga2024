@@ -21,12 +21,17 @@ public class ControlledPlatform : MonoBehaviour
     public Sprite activeSprite; // 活动时的精灵图
 
     private SpriteRenderer spriteRenderer; // 精灵渲染器
-
+    private AudioSource audio;
+    public AudioClip A;
+    public AudioClip B;
+    
+    
     void Start()
     {
         // 初始化平台位置和目标位置为起始点
         platform.position = startPoint;
         targetPosition = startPoint;
+        audio = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = defaultSprite;
     }
@@ -60,6 +65,8 @@ public class ControlledPlatform : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            audio.clip = A;
+            audio.Play();
             isTouch = true;
         }
     }
@@ -68,7 +75,16 @@ public class ControlledPlatform : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            audio.clip = B;
+            audio.Play();
             isTouch = false;
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(startPoint, 0.1f);
+        Gizmos.DrawSphere(endPoint, 0.1f);
+        Gizmos.DrawLine(startPoint, endPoint);
     }
 }

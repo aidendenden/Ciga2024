@@ -22,11 +22,14 @@ public class PatrollingNPC : BaseAction
     private bool movingRight = true;
     private bool isPaused;
 
+    private Animator animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         npcTransform = GetComponent<Transform>();
         npcCollider = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
         startPosition = npcTransform.position;
     }
 
@@ -113,6 +116,15 @@ public class PatrollingNPC : BaseAction
 
     public override void Execute()
     {
+        StartCoroutine(Die());
+    }
+
+    IEnumerator Die()
+    {
+        animator.SetBool("die",true);
+        npcCollider.isTrigger = true;
+        transform.GetChild(0).gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.9f);
         Destroy(this.gameObject);
     }
 }

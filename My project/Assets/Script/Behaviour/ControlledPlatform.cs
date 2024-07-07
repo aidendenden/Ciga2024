@@ -21,7 +21,7 @@ public class ControlledPlatform : MonoBehaviour
     public Sprite activeSprite; // 活动时的精灵图
 
     private SpriteRenderer spriteRenderer; // 精灵渲染器
-    private AudioSource audio;
+    public AudioSource audio;
     public AudioClip A;
     public AudioClip B;
     

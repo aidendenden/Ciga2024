@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class GameManager : MonoBehaviour
     public bool isPause=false;
     public bool getKey=false;
 
-    public LevelLoader LevelLoader;
+    public LevelLoader levelLoader;
     
     void SingletonInit()
     {
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        LevelLoader = transform.GetComponent<LevelLoader>();
+        levelLoader = transform.GetComponent<LevelLoader>();
         isPause=false;
         getKey=false;
     }
@@ -36,12 +37,17 @@ public class GameManager : MonoBehaviour
     {
         GameEventManager.Instance.ClearEventListeners();
         getKey=false;
-        LevelLoader.ReloadLevel();
+        levelLoader.ReloadLevel();
     }
 
     public void NextLevel()
     {
-        LevelLoader.LoadNextLevel();
+        levelLoader.LoadNextLevel();
+    }
+
+    public void ReStartGame()
+    {
+        levelLoader.ReStart();
     }
     
 }

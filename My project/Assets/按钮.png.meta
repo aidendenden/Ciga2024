@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef8ea6be76d7acf46b73076440271bb6
+guid: 6f341eae0e5d2694ab1a81364ea909c1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,19 +94,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -123,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: key_0
+      name: "\u6309\u94AE_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 150
-        height: 150
+        width: 104
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53ec4b787668de549b86213f9b4a8316
-      internalID: -1693484670
+      spriteID: ff6ea1b31bd85de44a7dbc6a7bef415e
+      internalID: -1264525103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: key_1
+      name: "\u6309\u94AE_1"
       rect:
         serializedVersion: 2
-        x: 150
+        x: 104
         y: 0
-        width: 150
-        height: 150
+        width: 104
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,50 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e9eda5a4bc50d3469933f59747ad1f4
-      internalID: 1112825127
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: key_2
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 0
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: abd67523be6e4914d9391728b6075efd
-      internalID: -1490508397
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: key_3
-      rect:
-        serializedVersion: 2
-        x: 450
-        y: 0
-        width: 150
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fca100740f2467342b80a2de81b77cb3
-      internalID: 976842425
+      spriteID: eabecd0430d972f47ba02533073da707
+      internalID: -70832418
       vertices: []
       indices: 
       edges: []
@@ -217,10 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      key_0: -1693484670
-      key_1: 1112825127
-      key_2: -1490508397
-      key_3: 976842425
+      "\u6309\u94AE_0": -1264525103
+      "\u6309\u94AE_1": -70832418
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

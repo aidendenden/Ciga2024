@@ -1784,7 +1784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPause: 0
   getKey: 0
-  LevelLoader: {fileID: 897628138}
+  levelLoader: {fileID: 0}
 --- !u!4 &897628140
 Transform:
   m_ObjectHideFlags: 0
@@ -3434,6 +3434,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
+      propertyPath: jumpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b62b1e5843eac9348afbc0b40e3475ac, type: 3}
+    - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -3445,6 +3449,14 @@ PrefabInstance:
       propertyPath: groundCheckDistance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
+      propertyPath: footstepClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
+      propertyPath: footstepClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 52a230ba200f7b342898a55254bf958a, type: 3}
     - target: {fileID: 8600327103188722003, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
       propertyPath: m_Name
       value: Player

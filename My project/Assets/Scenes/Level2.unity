@@ -5090,18 +5090,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1289864036192447554, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1887448300650512450, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
-      propertyPath: m_Size.x
-      value: 0.6995505
-      objectReference: {fileID: 0}
-    - target: {fileID: 1887448300650512450, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.10435575
-      objectReference: {fileID: 0}
     - target: {fileID: 8043381693577997512, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.96
@@ -5145,14 +5133,6 @@ PrefabInstance:
     - target: {fileID: 8585134039997831516, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8585134039997831516, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8585134039997831516, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
-      propertyPath: m_TagString
-      value: Interaction
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7780,22 +7760,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1289864036192447554, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1887448300650512450, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
-      propertyPath: m_Size.x
-      value: 0.6995505
-      objectReference: {fileID: 0}
-    - target: {fileID: 1887448300650512450, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.10435575
-      objectReference: {fileID: 0}
-    - target: {fileID: 3853599832301127146, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
-      propertyPath: patrolDistance
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8043381693577997512, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.14739111
@@ -7839,14 +7803,6 @@ PrefabInstance:
     - target: {fileID: 8585134039997831516, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8585134039997831516, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8585134039997831516, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
-      propertyPath: m_TagString
-      value: Interaction
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -45,6 +45,7 @@ public class Dialog : MonoBehaviour
         {
             PlayNextAnimation();
             collision.GetComponent<PlayerMovement>().canControl=false;
+            collision.transform.rotation= Quaternion.Euler(0f, 0f, 0f);
             canPlay = true;
         }
     }

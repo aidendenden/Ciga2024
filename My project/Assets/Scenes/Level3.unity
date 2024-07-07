@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.14901961, g: 0.10980393, b: 0.043137256, a: 1}
+  m_Color: {r: 0.9921569, g: 0.9960785, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3174,7 +3174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPause: 0
   getKey: 0
-  LevelLoader: {fileID: 1319761398}
+  levelLoader: {fileID: 0}
 --- !u!4 &1319761400
 Transform:
   m_ObjectHideFlags: 0
@@ -5052,6 +5052,10 @@ PrefabInstance:
       value: -0.04847884
       objectReference: {fileID: 0}
     - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
+      propertyPath: jumpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b62b1e5843eac9348afbc0b40e3475ac, type: 3}
+    - target: {fileID: 3996747985832566504, guid: 221ea8c75280ccc49ac7a422c760847a, type: 3}
       propertyPath: wallCheckDistance
       value: -1
       objectReference: {fileID: 0}
@@ -5149,14 +5153,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1887448300650512450, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
-      propertyPath: m_Size.x
-      value: 0.6995505
-      objectReference: {fileID: 0}
-    - target: {fileID: 1887448300650512450, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.10435575
-      objectReference: {fileID: 0}
     - target: {fileID: 8043381693577997512, guid: 705fa532bb8d5fa488f844aa434b51fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.95
